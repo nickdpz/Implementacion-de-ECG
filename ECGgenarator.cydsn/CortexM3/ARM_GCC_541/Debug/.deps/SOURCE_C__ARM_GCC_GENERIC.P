@@ -1,0 +1,58 @@
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/CyDmac.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/CyFlash.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/CyLib.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/CySpc.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/ISR.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/LEDS.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/LEDS_aliases.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/POUT.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/POUT_aliases.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/SW.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/SW_aliases.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/VDAC8.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cmsis_compiler.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/core_cm3.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cyPm.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cypins.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/project.h C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/main.c 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/CyLib.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/CySpc.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/ISR.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/LEDS.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/LEDS_aliases.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/POUT.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/POUT_aliases.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/SW.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/SW_aliases.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/VDAC8.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cyPm.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cypins.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/Generated_Source/PSoC5/project.h : 
+
+C:/Users/nikod/Documents/PSoC\ Creator/Signals/ECGgenarator.cydsn/main.c : 
+

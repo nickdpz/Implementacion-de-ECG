@@ -1,0 +1,801 @@
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"LEDS.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.LEDS_Write,"ax",%progbits
+  20              		.align	2
+  21              		.global	LEDS_Write
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	LEDS_Write, %function
+  25              	LEDS_Write:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC5\\LEDS.c"
+   1:Generated_Source\PSoC5/LEDS.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/LEDS.c **** * File Name: LEDS.c  
+   3:Generated_Source\PSoC5/LEDS.c **** * Version 2.20
+   4:Generated_Source\PSoC5/LEDS.c **** *
+   5:Generated_Source\PSoC5/LEDS.c **** * Description:
+   6:Generated_Source\PSoC5/LEDS.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:Generated_Source\PSoC5/LEDS.c **** *
+   8:Generated_Source\PSoC5/LEDS.c **** * Note:
+   9:Generated_Source\PSoC5/LEDS.c **** *
+  10:Generated_Source\PSoC5/LEDS.c **** ********************************************************************************
+  11:Generated_Source\PSoC5/LEDS.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  12:Generated_Source\PSoC5/LEDS.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:Generated_Source\PSoC5/LEDS.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:Generated_Source\PSoC5/LEDS.c **** * the software package with which this file was provided.
+  15:Generated_Source\PSoC5/LEDS.c **** *******************************************************************************/
+  16:Generated_Source\PSoC5/LEDS.c **** 
+  17:Generated_Source\PSoC5/LEDS.c **** #include "cytypes.h"
+  18:Generated_Source\PSoC5/LEDS.c **** #include "LEDS.h"
+  19:Generated_Source\PSoC5/LEDS.c **** 
+  20:Generated_Source\PSoC5/LEDS.c **** /* APIs are not generated for P15[7:6] on PSoC 5 */
+  21:Generated_Source\PSoC5/LEDS.c **** #if !(CY_PSOC5A &&\
+  22:Generated_Source\PSoC5/LEDS.c **** 	 LEDS__PORT == 15 && ((LEDS__MASK & 0xC0) != 0))
+  23:Generated_Source\PSoC5/LEDS.c **** 
+  24:Generated_Source\PSoC5/LEDS.c **** 
+  25:Generated_Source\PSoC5/LEDS.c **** /*******************************************************************************
+  26:Generated_Source\PSoC5/LEDS.c **** * Function Name: LEDS_Write
+  27:Generated_Source\PSoC5/LEDS.c **** ****************************************************************************//**
+  28:Generated_Source\PSoC5/LEDS.c **** *
+  29:Generated_Source\PSoC5/LEDS.c **** * \brief Writes the value to the physical port (data output register), masking
+  30:Generated_Source\PSoC5/LEDS.c **** *  and shifting the bits appropriately. 
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 2
+
+
+  31:Generated_Source\PSoC5/LEDS.c **** *
+  32:Generated_Source\PSoC5/LEDS.c **** * The data output register controls the signal applied to the physical pin in 
+  33:Generated_Source\PSoC5/LEDS.c **** * conjunction with the drive mode parameter. This function avoids changing 
+  34:Generated_Source\PSoC5/LEDS.c **** * other bits in the port by using the appropriate method (read-modify-write or
+  35:Generated_Source\PSoC5/LEDS.c **** * bit banding).
+  36:Generated_Source\PSoC5/LEDS.c **** *
+  37:Generated_Source\PSoC5/LEDS.c **** * <b>Note</b> This function should not be used on a hardware digital output pin 
+  38:Generated_Source\PSoC5/LEDS.c **** * as it is driven by the hardware signal attached to it.
+  39:Generated_Source\PSoC5/LEDS.c **** *
+  40:Generated_Source\PSoC5/LEDS.c **** * \param value
+  41:Generated_Source\PSoC5/LEDS.c **** *  Value to write to the component instance.
+  42:Generated_Source\PSoC5/LEDS.c **** *
+  43:Generated_Source\PSoC5/LEDS.c **** * \return 
+  44:Generated_Source\PSoC5/LEDS.c **** *  None 
+  45:Generated_Source\PSoC5/LEDS.c **** *
+  46:Generated_Source\PSoC5/LEDS.c **** * \sideeffect
+  47:Generated_Source\PSoC5/LEDS.c **** *  If you use read-modify-write operations that are not atomic; the Interrupt 
+  48:Generated_Source\PSoC5/LEDS.c **** *  Service Routines (ISR) can cause corruption of this function. An ISR that 
+  49:Generated_Source\PSoC5/LEDS.c **** *  interrupts this function and performs writes to the Pins component data 
+  50:Generated_Source\PSoC5/LEDS.c **** *  register can cause corrupted port data. To avoid this issue, you should 
+  51:Generated_Source\PSoC5/LEDS.c **** *  either use the Per-Pin APIs (primary method) or disable interrupts around 
+  52:Generated_Source\PSoC5/LEDS.c **** *  this function.
+  53:Generated_Source\PSoC5/LEDS.c **** *
+  54:Generated_Source\PSoC5/LEDS.c **** * \funcusage
+  55:Generated_Source\PSoC5/LEDS.c **** *  \snippet LEDS_SUT.c usage_LEDS_Write
+  56:Generated_Source\PSoC5/LEDS.c **** *******************************************************************************/
+  57:Generated_Source\PSoC5/LEDS.c **** void LEDS_Write(uint8 value)
+  58:Generated_Source\PSoC5/LEDS.c **** {
+  28              		.loc 1 58 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  59:Generated_Source\PSoC5/LEDS.c ****     uint8 staticBits = (LEDS_DR & (uint8)(~LEDS_MASK));
+  34              		.loc 1 59 0
+  35 0000 044A     		ldr	r2, .L2
+  36 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  37 0004 03F03F03 		and	r3, r3, #63
+  38              	.LVL1:
+  60:Generated_Source\PSoC5/LEDS.c ****     LEDS_DR = staticBits | ((uint8)(value << LEDS_SHIFT) & LEDS_MASK);
+  39              		.loc 1 60 0
+  40 0008 8001     		lsls	r0, r0, #6
+  41              	.LVL2:
+  42 000a C0B2     		uxtb	r0, r0
+  43 000c 1843     		orrs	r0, r0, r3
+  44 000e 1070     		strb	r0, [r2]
+  45 0010 7047     		bx	lr
+  46              	.L3:
+  47 0012 00BF     		.align	2
+  48              	.L2:
+  49 0014 00510040 		.word	1073762560
+  50              		.cfi_endproc
+  51              	.LFE0:
+  52              		.size	LEDS_Write, .-LEDS_Write
+  53              		.section	.text.LEDS_SetDriveMode,"ax",%progbits
+  54              		.align	2
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 3
+
+
+  55              		.global	LEDS_SetDriveMode
+  56              		.thumb
+  57              		.thumb_func
+  58              		.type	LEDS_SetDriveMode, %function
+  59              	LEDS_SetDriveMode:
+  60              	.LFB1:
+  61:Generated_Source\PSoC5/LEDS.c **** }
+  62:Generated_Source\PSoC5/LEDS.c **** 
+  63:Generated_Source\PSoC5/LEDS.c **** 
+  64:Generated_Source\PSoC5/LEDS.c **** /*******************************************************************************
+  65:Generated_Source\PSoC5/LEDS.c **** * Function Name: LEDS_SetDriveMode
+  66:Generated_Source\PSoC5/LEDS.c **** ****************************************************************************//**
+  67:Generated_Source\PSoC5/LEDS.c **** *
+  68:Generated_Source\PSoC5/LEDS.c **** * \brief Sets the drive mode for each of the Pins component's pins.
+  69:Generated_Source\PSoC5/LEDS.c **** * 
+  70:Generated_Source\PSoC5/LEDS.c **** * <b>Note</b> This affects all pins in the Pins component instance. Use the
+  71:Generated_Source\PSoC5/LEDS.c **** * Per-Pin APIs if you wish to control individual pin's drive modes.
+  72:Generated_Source\PSoC5/LEDS.c **** *
+  73:Generated_Source\PSoC5/LEDS.c **** * \param mode
+  74:Generated_Source\PSoC5/LEDS.c **** *  Mode for the selected signals. Valid options are documented in 
+  75:Generated_Source\PSoC5/LEDS.c **** *  \ref driveMode.
+  76:Generated_Source\PSoC5/LEDS.c **** *
+  77:Generated_Source\PSoC5/LEDS.c **** * \return
+  78:Generated_Source\PSoC5/LEDS.c **** *  None
+  79:Generated_Source\PSoC5/LEDS.c **** *
+  80:Generated_Source\PSoC5/LEDS.c **** * \sideeffect
+  81:Generated_Source\PSoC5/LEDS.c **** *  If you use read-modify-write operations that are not atomic, the ISR can
+  82:Generated_Source\PSoC5/LEDS.c **** *  cause corruption of this function. An ISR that interrupts this function 
+  83:Generated_Source\PSoC5/LEDS.c **** *  and performs writes to the Pins component Drive Mode registers can cause 
+  84:Generated_Source\PSoC5/LEDS.c **** *  corrupted port data. To avoid this issue, you should either use the Per-Pin
+  85:Generated_Source\PSoC5/LEDS.c **** *  APIs (primary method) or disable interrupts around this function.
+  86:Generated_Source\PSoC5/LEDS.c **** *
+  87:Generated_Source\PSoC5/LEDS.c **** * \funcusage
+  88:Generated_Source\PSoC5/LEDS.c **** *  \snippet LEDS_SUT.c usage_LEDS_SetDriveMode
+  89:Generated_Source\PSoC5/LEDS.c **** *******************************************************************************/
+  90:Generated_Source\PSoC5/LEDS.c **** void LEDS_SetDriveMode(uint8 mode)
+  91:Generated_Source\PSoC5/LEDS.c **** {
+  61              		.loc 1 91 0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65              		@ link register save eliminated.
+  66              	.LVL3:
+  92:Generated_Source\PSoC5/LEDS.c **** 	CyPins_SetPinDriveMode(LEDS_0, mode);
+  67              		.loc 1 92 0
+  68 0000 074A     		ldr	r2, .L5
+  69 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  70 0004 00F00E00 		and	r0, r0, #14
+  71              	.LVL4:
+  72 0008 03F0F103 		and	r3, r3, #241
+  73 000c 0343     		orrs	r3, r3, r0
+  74 000e 1370     		strb	r3, [r2]
+  93:Generated_Source\PSoC5/LEDS.c **** 	CyPins_SetPinDriveMode(LEDS_1, mode);
+  75              		.loc 1 93 0
+  76 0010 0132     		adds	r2, r2, #1
+  77 0012 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  78 0014 03F0F103 		and	r3, r3, #241
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 4
+
+
+  79 0018 1843     		orrs	r0, r0, r3
+  80 001a 1070     		strb	r0, [r2]
+  81 001c 7047     		bx	lr
+  82              	.L6:
+  83 001e 00BF     		.align	2
+  84              	.L5:
+  85 0020 06500040 		.word	1073762310
+  86              		.cfi_endproc
+  87              	.LFE1:
+  88              		.size	LEDS_SetDriveMode, .-LEDS_SetDriveMode
+  89              		.section	.text.LEDS_Read,"ax",%progbits
+  90              		.align	2
+  91              		.global	LEDS_Read
+  92              		.thumb
+  93              		.thumb_func
+  94              		.type	LEDS_Read, %function
+  95              	LEDS_Read:
+  96              	.LFB2:
+  94:Generated_Source\PSoC5/LEDS.c **** }
+  95:Generated_Source\PSoC5/LEDS.c **** 
+  96:Generated_Source\PSoC5/LEDS.c **** 
+  97:Generated_Source\PSoC5/LEDS.c **** /*******************************************************************************
+  98:Generated_Source\PSoC5/LEDS.c **** * Function Name: LEDS_Read
+  99:Generated_Source\PSoC5/LEDS.c **** ****************************************************************************//**
+ 100:Generated_Source\PSoC5/LEDS.c **** *
+ 101:Generated_Source\PSoC5/LEDS.c **** * \brief Reads the associated physical port (pin status register) and masks 
+ 102:Generated_Source\PSoC5/LEDS.c **** *  the required bits according to the width and bit position of the component
+ 103:Generated_Source\PSoC5/LEDS.c **** *  instance. 
+ 104:Generated_Source\PSoC5/LEDS.c **** *
+ 105:Generated_Source\PSoC5/LEDS.c **** * The pin's status register returns the current logic level present on the 
+ 106:Generated_Source\PSoC5/LEDS.c **** * physical pin.
+ 107:Generated_Source\PSoC5/LEDS.c **** *
+ 108:Generated_Source\PSoC5/LEDS.c **** * \return 
+ 109:Generated_Source\PSoC5/LEDS.c **** *  The current value for the pins in the component as a right justified number.
+ 110:Generated_Source\PSoC5/LEDS.c **** *
+ 111:Generated_Source\PSoC5/LEDS.c **** * \funcusage
+ 112:Generated_Source\PSoC5/LEDS.c **** *  \snippet LEDS_SUT.c usage_LEDS_Read  
+ 113:Generated_Source\PSoC5/LEDS.c **** *******************************************************************************/
+ 114:Generated_Source\PSoC5/LEDS.c **** uint8 LEDS_Read(void)
+ 115:Generated_Source\PSoC5/LEDS.c **** {
+  97              		.loc 1 115 0
+  98              		.cfi_startproc
+  99              		@ args = 0, pretend = 0, frame = 0
+ 100              		@ frame_needed = 0, uses_anonymous_args = 0
+ 101              		@ link register save eliminated.
+ 116:Generated_Source\PSoC5/LEDS.c ****     return (LEDS_PS & LEDS_MASK) >> LEDS_SHIFT;
+ 102              		.loc 1 116 0
+ 103 0000 014B     		ldr	r3, .L8
+ 104 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 117:Generated_Source\PSoC5/LEDS.c **** }
+ 105              		.loc 1 117 0
+ 106 0004 8009     		lsrs	r0, r0, #6
+ 107 0006 7047     		bx	lr
+ 108              	.L9:
+ 109              		.align	2
+ 110              	.L8:
+ 111 0008 01510040 		.word	1073762561
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 5
+
+
+ 112              		.cfi_endproc
+ 113              	.LFE2:
+ 114              		.size	LEDS_Read, .-LEDS_Read
+ 115              		.section	.text.LEDS_ReadDataReg,"ax",%progbits
+ 116              		.align	2
+ 117              		.global	LEDS_ReadDataReg
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.type	LEDS_ReadDataReg, %function
+ 121              	LEDS_ReadDataReg:
+ 122              	.LFB3:
+ 118:Generated_Source\PSoC5/LEDS.c **** 
+ 119:Generated_Source\PSoC5/LEDS.c **** 
+ 120:Generated_Source\PSoC5/LEDS.c **** /*******************************************************************************
+ 121:Generated_Source\PSoC5/LEDS.c **** * Function Name: LEDS_ReadDataReg
+ 122:Generated_Source\PSoC5/LEDS.c **** ****************************************************************************//**
+ 123:Generated_Source\PSoC5/LEDS.c **** *
+ 124:Generated_Source\PSoC5/LEDS.c **** * \brief Reads the associated physical port's data output register and masks 
+ 125:Generated_Source\PSoC5/LEDS.c **** *  the correct bits according to the width and bit position of the component 
+ 126:Generated_Source\PSoC5/LEDS.c **** *  instance. 
+ 127:Generated_Source\PSoC5/LEDS.c **** *
+ 128:Generated_Source\PSoC5/LEDS.c **** * The data output register controls the signal applied to the physical pin in 
+ 129:Generated_Source\PSoC5/LEDS.c **** * conjunction with the drive mode parameter. This is not the same as the 
+ 130:Generated_Source\PSoC5/LEDS.c **** * preferred LEDS_Read() API because the 
+ 131:Generated_Source\PSoC5/LEDS.c **** * LEDS_ReadDataReg() reads the data register instead of the status 
+ 132:Generated_Source\PSoC5/LEDS.c **** * register. For output pins this is a useful function to determine the value 
+ 133:Generated_Source\PSoC5/LEDS.c **** * just written to the pin.
+ 134:Generated_Source\PSoC5/LEDS.c **** *
+ 135:Generated_Source\PSoC5/LEDS.c **** * \return 
+ 136:Generated_Source\PSoC5/LEDS.c **** *  The current value of the data register masked and shifted into a right 
+ 137:Generated_Source\PSoC5/LEDS.c **** *  justified number for the component instance.
+ 138:Generated_Source\PSoC5/LEDS.c **** *
+ 139:Generated_Source\PSoC5/LEDS.c **** * \funcusage
+ 140:Generated_Source\PSoC5/LEDS.c **** *  \snippet LEDS_SUT.c usage_LEDS_ReadDataReg 
+ 141:Generated_Source\PSoC5/LEDS.c **** *******************************************************************************/
+ 142:Generated_Source\PSoC5/LEDS.c **** uint8 LEDS_ReadDataReg(void)
+ 143:Generated_Source\PSoC5/LEDS.c **** {
+ 123              		.loc 1 143 0
+ 124              		.cfi_startproc
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127              		@ link register save eliminated.
+ 144:Generated_Source\PSoC5/LEDS.c ****     return (LEDS_DR & LEDS_MASK) >> LEDS_SHIFT;
+ 128              		.loc 1 144 0
+ 129 0000 014B     		ldr	r3, .L11
+ 130 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 145:Generated_Source\PSoC5/LEDS.c **** }
+ 131              		.loc 1 145 0
+ 132 0004 8009     		lsrs	r0, r0, #6
+ 133 0006 7047     		bx	lr
+ 134              	.L12:
+ 135              		.align	2
+ 136              	.L11:
+ 137 0008 00510040 		.word	1073762560
+ 138              		.cfi_endproc
+ 139              	.LFE3:
+ 140              		.size	LEDS_ReadDataReg, .-LEDS_ReadDataReg
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 6
+
+
+ 141              		.text
+ 142              	.Letext0:
+ 143              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 144              		.section	.debug_info,"",%progbits
+ 145              	.Ldebug_info0:
+ 146 0000 1B010000 		.4byte	0x11b
+ 147 0004 0400     		.2byte	0x4
+ 148 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 149 000a 04       		.byte	0x4
+ 150 000b 01       		.uleb128 0x1
+ 151 000c 53000000 		.4byte	.LASF20
+ 152 0010 0C       		.byte	0xc
+ 153 0011 1B000000 		.4byte	.LASF21
+ 154 0015 69010000 		.4byte	.LASF22
+ 155 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 156 001d 00000000 		.4byte	0
+ 157 0021 00000000 		.4byte	.Ldebug_line0
+ 158 0025 02       		.uleb128 0x2
+ 159 0026 01       		.byte	0x1
+ 160 0027 06       		.byte	0x6
+ 161 0028 C5010000 		.4byte	.LASF0
+ 162 002c 02       		.uleb128 0x2
+ 163 002d 01       		.byte	0x1
+ 164 002e 08       		.byte	0x8
+ 165 002f 45000000 		.4byte	.LASF1
+ 166 0033 02       		.uleb128 0x2
+ 167 0034 02       		.byte	0x2
+ 168 0035 05       		.byte	0x5
+ 169 0036 5F010000 		.4byte	.LASF2
+ 170 003a 02       		.uleb128 0x2
+ 171 003b 02       		.byte	0x2
+ 172 003c 07       		.byte	0x7
+ 173 003d F8000000 		.4byte	.LASF3
+ 174 0041 02       		.uleb128 0x2
+ 175 0042 04       		.byte	0x4
+ 176 0043 05       		.byte	0x5
+ 177 0044 BC010000 		.4byte	.LASF4
+ 178 0048 02       		.uleb128 0x2
+ 179 0049 04       		.byte	0x4
+ 180 004a 07       		.byte	0x7
+ 181 004b E6000000 		.4byte	.LASF5
+ 182 004f 02       		.uleb128 0x2
+ 183 0050 08       		.byte	0x8
+ 184 0051 05       		.byte	0x5
+ 185 0052 4C010000 		.4byte	.LASF6
+ 186 0056 02       		.uleb128 0x2
+ 187 0057 08       		.byte	0x8
+ 188 0058 07       		.byte	0x7
+ 189 0059 30010000 		.4byte	.LASF7
+ 190 005d 03       		.uleb128 0x3
+ 191 005e 04       		.byte	0x4
+ 192 005f 05       		.byte	0x5
+ 193 0060 696E7400 		.ascii	"int\000"
+ 194 0064 02       		.uleb128 0x2
+ 195 0065 04       		.byte	0x4
+ 196 0066 07       		.byte	0x7
+ 197 0067 23010000 		.4byte	.LASF8
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 7
+
+
+ 198 006b 04       		.uleb128 0x4
+ 199 006c 3F000000 		.4byte	.LASF12
+ 200 0070 02       		.byte	0x2
+ 201 0071 E401     		.2byte	0x1e4
+ 202 0073 2C000000 		.4byte	0x2c
+ 203 0077 02       		.uleb128 0x2
+ 204 0078 04       		.byte	0x4
+ 205 0079 04       		.byte	0x4
+ 206 007a 39000000 		.4byte	.LASF9
+ 207 007e 02       		.uleb128 0x2
+ 208 007f 08       		.byte	0x8
+ 209 0080 04       		.byte	0x4
+ 210 0081 1C010000 		.4byte	.LASF10
+ 211 0085 02       		.uleb128 0x2
+ 212 0086 01       		.byte	0x1
+ 213 0087 08       		.byte	0x8
+ 214 0088 5A010000 		.4byte	.LASF11
+ 215 008c 04       		.uleb128 0x4
+ 216 008d E1000000 		.4byte	.LASF13
+ 217 0091 02       		.byte	0x2
+ 218 0092 8E02     		.2byte	0x28e
+ 219 0094 98000000 		.4byte	0x98
+ 220 0098 05       		.uleb128 0x5
+ 221 0099 6B000000 		.4byte	0x6b
+ 222 009d 06       		.uleb128 0x6
+ 223 009e D1010000 		.4byte	.LASF14
+ 224 00a2 01       		.byte	0x1
+ 225 00a3 39       		.byte	0x39
+ 226 00a4 00000000 		.4byte	.LFB0
+ 227 00a8 18000000 		.4byte	.LFE0-.LFB0
+ 228 00ac 01       		.uleb128 0x1
+ 229 00ad 9C       		.byte	0x9c
+ 230 00ae CF000000 		.4byte	0xcf
+ 231 00b2 07       		.uleb128 0x7
+ 232 00b3 0A000000 		.4byte	.LASF16
+ 233 00b7 01       		.byte	0x1
+ 234 00b8 39       		.byte	0x39
+ 235 00b9 6B000000 		.4byte	0x6b
+ 236 00bd 00000000 		.4byte	.LLST0
+ 237 00c1 08       		.uleb128 0x8
+ 238 00c2 10000000 		.4byte	.LASF23
+ 239 00c6 01       		.byte	0x1
+ 240 00c7 3B       		.byte	0x3b
+ 241 00c8 6B000000 		.4byte	0x6b
+ 242 00cc 01       		.uleb128 0x1
+ 243 00cd 53       		.byte	0x53
+ 244 00ce 00       		.byte	0
+ 245 00cf 06       		.uleb128 0x6
+ 246 00d0 AA010000 		.4byte	.LASF15
+ 247 00d4 01       		.byte	0x1
+ 248 00d5 5A       		.byte	0x5a
+ 249 00d6 00000000 		.4byte	.LFB1
+ 250 00da 24000000 		.4byte	.LFE1-.LFB1
+ 251 00de 01       		.uleb128 0x1
+ 252 00df 9C       		.byte	0x9c
+ 253 00e0 F4000000 		.4byte	0xf4
+ 254 00e4 07       		.uleb128 0x7
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 8
+
+
+ 255 00e5 47010000 		.4byte	.LASF17
+ 256 00e9 01       		.byte	0x1
+ 257 00ea 5A       		.byte	0x5a
+ 258 00eb 6B000000 		.4byte	0x6b
+ 259 00ef 21000000 		.4byte	.LLST1
+ 260 00f3 00       		.byte	0
+ 261 00f4 09       		.uleb128 0x9
+ 262 00f5 00000000 		.4byte	.LASF18
+ 263 00f9 01       		.byte	0x1
+ 264 00fa 72       		.byte	0x72
+ 265 00fb 6B000000 		.4byte	0x6b
+ 266 00ff 00000000 		.4byte	.LFB2
+ 267 0103 0C000000 		.4byte	.LFE2-.LFB2
+ 268 0107 01       		.uleb128 0x1
+ 269 0108 9C       		.byte	0x9c
+ 270 0109 09       		.uleb128 0x9
+ 271 010a 0B010000 		.4byte	.LASF19
+ 272 010e 01       		.byte	0x1
+ 273 010f 8E       		.byte	0x8e
+ 274 0110 6B000000 		.4byte	0x6b
+ 275 0114 00000000 		.4byte	.LFB3
+ 276 0118 0C000000 		.4byte	.LFE3-.LFB3
+ 277 011c 01       		.uleb128 0x1
+ 278 011d 9C       		.byte	0x9c
+ 279 011e 00       		.byte	0
+ 280              		.section	.debug_abbrev,"",%progbits
+ 281              	.Ldebug_abbrev0:
+ 282 0000 01       		.uleb128 0x1
+ 283 0001 11       		.uleb128 0x11
+ 284 0002 01       		.byte	0x1
+ 285 0003 25       		.uleb128 0x25
+ 286 0004 0E       		.uleb128 0xe
+ 287 0005 13       		.uleb128 0x13
+ 288 0006 0B       		.uleb128 0xb
+ 289 0007 03       		.uleb128 0x3
+ 290 0008 0E       		.uleb128 0xe
+ 291 0009 1B       		.uleb128 0x1b
+ 292 000a 0E       		.uleb128 0xe
+ 293 000b 55       		.uleb128 0x55
+ 294 000c 17       		.uleb128 0x17
+ 295 000d 11       		.uleb128 0x11
+ 296 000e 01       		.uleb128 0x1
+ 297 000f 10       		.uleb128 0x10
+ 298 0010 17       		.uleb128 0x17
+ 299 0011 00       		.byte	0
+ 300 0012 00       		.byte	0
+ 301 0013 02       		.uleb128 0x2
+ 302 0014 24       		.uleb128 0x24
+ 303 0015 00       		.byte	0
+ 304 0016 0B       		.uleb128 0xb
+ 305 0017 0B       		.uleb128 0xb
+ 306 0018 3E       		.uleb128 0x3e
+ 307 0019 0B       		.uleb128 0xb
+ 308 001a 03       		.uleb128 0x3
+ 309 001b 0E       		.uleb128 0xe
+ 310 001c 00       		.byte	0
+ 311 001d 00       		.byte	0
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 9
+
+
+ 312 001e 03       		.uleb128 0x3
+ 313 001f 24       		.uleb128 0x24
+ 314 0020 00       		.byte	0
+ 315 0021 0B       		.uleb128 0xb
+ 316 0022 0B       		.uleb128 0xb
+ 317 0023 3E       		.uleb128 0x3e
+ 318 0024 0B       		.uleb128 0xb
+ 319 0025 03       		.uleb128 0x3
+ 320 0026 08       		.uleb128 0x8
+ 321 0027 00       		.byte	0
+ 322 0028 00       		.byte	0
+ 323 0029 04       		.uleb128 0x4
+ 324 002a 16       		.uleb128 0x16
+ 325 002b 00       		.byte	0
+ 326 002c 03       		.uleb128 0x3
+ 327 002d 0E       		.uleb128 0xe
+ 328 002e 3A       		.uleb128 0x3a
+ 329 002f 0B       		.uleb128 0xb
+ 330 0030 3B       		.uleb128 0x3b
+ 331 0031 05       		.uleb128 0x5
+ 332 0032 49       		.uleb128 0x49
+ 333 0033 13       		.uleb128 0x13
+ 334 0034 00       		.byte	0
+ 335 0035 00       		.byte	0
+ 336 0036 05       		.uleb128 0x5
+ 337 0037 35       		.uleb128 0x35
+ 338 0038 00       		.byte	0
+ 339 0039 49       		.uleb128 0x49
+ 340 003a 13       		.uleb128 0x13
+ 341 003b 00       		.byte	0
+ 342 003c 00       		.byte	0
+ 343 003d 06       		.uleb128 0x6
+ 344 003e 2E       		.uleb128 0x2e
+ 345 003f 01       		.byte	0x1
+ 346 0040 3F       		.uleb128 0x3f
+ 347 0041 19       		.uleb128 0x19
+ 348 0042 03       		.uleb128 0x3
+ 349 0043 0E       		.uleb128 0xe
+ 350 0044 3A       		.uleb128 0x3a
+ 351 0045 0B       		.uleb128 0xb
+ 352 0046 3B       		.uleb128 0x3b
+ 353 0047 0B       		.uleb128 0xb
+ 354 0048 27       		.uleb128 0x27
+ 355 0049 19       		.uleb128 0x19
+ 356 004a 11       		.uleb128 0x11
+ 357 004b 01       		.uleb128 0x1
+ 358 004c 12       		.uleb128 0x12
+ 359 004d 06       		.uleb128 0x6
+ 360 004e 40       		.uleb128 0x40
+ 361 004f 18       		.uleb128 0x18
+ 362 0050 9742     		.uleb128 0x2117
+ 363 0052 19       		.uleb128 0x19
+ 364 0053 01       		.uleb128 0x1
+ 365 0054 13       		.uleb128 0x13
+ 366 0055 00       		.byte	0
+ 367 0056 00       		.byte	0
+ 368 0057 07       		.uleb128 0x7
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 10
+
+
+ 369 0058 05       		.uleb128 0x5
+ 370 0059 00       		.byte	0
+ 371 005a 03       		.uleb128 0x3
+ 372 005b 0E       		.uleb128 0xe
+ 373 005c 3A       		.uleb128 0x3a
+ 374 005d 0B       		.uleb128 0xb
+ 375 005e 3B       		.uleb128 0x3b
+ 376 005f 0B       		.uleb128 0xb
+ 377 0060 49       		.uleb128 0x49
+ 378 0061 13       		.uleb128 0x13
+ 379 0062 02       		.uleb128 0x2
+ 380 0063 17       		.uleb128 0x17
+ 381 0064 00       		.byte	0
+ 382 0065 00       		.byte	0
+ 383 0066 08       		.uleb128 0x8
+ 384 0067 34       		.uleb128 0x34
+ 385 0068 00       		.byte	0
+ 386 0069 03       		.uleb128 0x3
+ 387 006a 0E       		.uleb128 0xe
+ 388 006b 3A       		.uleb128 0x3a
+ 389 006c 0B       		.uleb128 0xb
+ 390 006d 3B       		.uleb128 0x3b
+ 391 006e 0B       		.uleb128 0xb
+ 392 006f 49       		.uleb128 0x49
+ 393 0070 13       		.uleb128 0x13
+ 394 0071 02       		.uleb128 0x2
+ 395 0072 18       		.uleb128 0x18
+ 396 0073 00       		.byte	0
+ 397 0074 00       		.byte	0
+ 398 0075 09       		.uleb128 0x9
+ 399 0076 2E       		.uleb128 0x2e
+ 400 0077 00       		.byte	0
+ 401 0078 3F       		.uleb128 0x3f
+ 402 0079 19       		.uleb128 0x19
+ 403 007a 03       		.uleb128 0x3
+ 404 007b 0E       		.uleb128 0xe
+ 405 007c 3A       		.uleb128 0x3a
+ 406 007d 0B       		.uleb128 0xb
+ 407 007e 3B       		.uleb128 0x3b
+ 408 007f 0B       		.uleb128 0xb
+ 409 0080 27       		.uleb128 0x27
+ 410 0081 19       		.uleb128 0x19
+ 411 0082 49       		.uleb128 0x49
+ 412 0083 13       		.uleb128 0x13
+ 413 0084 11       		.uleb128 0x11
+ 414 0085 01       		.uleb128 0x1
+ 415 0086 12       		.uleb128 0x12
+ 416 0087 06       		.uleb128 0x6
+ 417 0088 40       		.uleb128 0x40
+ 418 0089 18       		.uleb128 0x18
+ 419 008a 9742     		.uleb128 0x2117
+ 420 008c 19       		.uleb128 0x19
+ 421 008d 00       		.byte	0
+ 422 008e 00       		.byte	0
+ 423 008f 00       		.byte	0
+ 424              		.section	.debug_loc,"",%progbits
+ 425              	.Ldebug_loc0:
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 11
+
+
+ 426              	.LLST0:
+ 427 0000 00000000 		.4byte	.LVL0
+ 428 0004 0A000000 		.4byte	.LVL2
+ 429 0008 0100     		.2byte	0x1
+ 430 000a 50       		.byte	0x50
+ 431 000b 0A000000 		.4byte	.LVL2
+ 432 000f 18000000 		.4byte	.LFE0
+ 433 0013 0400     		.2byte	0x4
+ 434 0015 F3       		.byte	0xf3
+ 435 0016 01       		.uleb128 0x1
+ 436 0017 50       		.byte	0x50
+ 437 0018 9F       		.byte	0x9f
+ 438 0019 00000000 		.4byte	0
+ 439 001d 00000000 		.4byte	0
+ 440              	.LLST1:
+ 441 0021 00000000 		.4byte	.LVL3
+ 442 0025 08000000 		.4byte	.LVL4
+ 443 0029 0100     		.2byte	0x1
+ 444 002b 50       		.byte	0x50
+ 445 002c 08000000 		.4byte	.LVL4
+ 446 0030 24000000 		.4byte	.LFE1
+ 447 0034 0400     		.2byte	0x4
+ 448 0036 F3       		.byte	0xf3
+ 449 0037 01       		.uleb128 0x1
+ 450 0038 50       		.byte	0x50
+ 451 0039 9F       		.byte	0x9f
+ 452 003a 00000000 		.4byte	0
+ 453 003e 00000000 		.4byte	0
+ 454              		.section	.debug_aranges,"",%progbits
+ 455 0000 34000000 		.4byte	0x34
+ 456 0004 0200     		.2byte	0x2
+ 457 0006 00000000 		.4byte	.Ldebug_info0
+ 458 000a 04       		.byte	0x4
+ 459 000b 00       		.byte	0
+ 460 000c 0000     		.2byte	0
+ 461 000e 0000     		.2byte	0
+ 462 0010 00000000 		.4byte	.LFB0
+ 463 0014 18000000 		.4byte	.LFE0-.LFB0
+ 464 0018 00000000 		.4byte	.LFB1
+ 465 001c 24000000 		.4byte	.LFE1-.LFB1
+ 466 0020 00000000 		.4byte	.LFB2
+ 467 0024 0C000000 		.4byte	.LFE2-.LFB2
+ 468 0028 00000000 		.4byte	.LFB3
+ 469 002c 0C000000 		.4byte	.LFE3-.LFB3
+ 470 0030 00000000 		.4byte	0
+ 471 0034 00000000 		.4byte	0
+ 472              		.section	.debug_ranges,"",%progbits
+ 473              	.Ldebug_ranges0:
+ 474 0000 00000000 		.4byte	.LFB0
+ 475 0004 18000000 		.4byte	.LFE0
+ 476 0008 00000000 		.4byte	.LFB1
+ 477 000c 24000000 		.4byte	.LFE1
+ 478 0010 00000000 		.4byte	.LFB2
+ 479 0014 0C000000 		.4byte	.LFE2
+ 480 0018 00000000 		.4byte	.LFB3
+ 481 001c 0C000000 		.4byte	.LFE3
+ 482 0020 00000000 		.4byte	0
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 12
+
+
+ 483 0024 00000000 		.4byte	0
+ 484              		.section	.debug_line,"",%progbits
+ 485              	.Ldebug_line0:
+ 486 0000 8E000000 		.section	.debug_str,"MS",%progbits,1
+ 486      02004100 
+ 486      00000201 
+ 486      FB0E0D00 
+ 486      01010101 
+ 487              	.LASF18:
+ 488 0000 4C454453 		.ascii	"LEDS_Read\000"
+ 488      5F526561 
+ 488      6400
+ 489              	.LASF16:
+ 490 000a 76616C75 		.ascii	"value\000"
+ 490      6500
+ 491              	.LASF23:
+ 492 0010 73746174 		.ascii	"staticBits\000"
+ 492      69634269 
+ 492      747300
+ 493              	.LASF21:
+ 494 001b 47656E65 		.ascii	"Generated_Source\\PSoC5\\LEDS.c\000"
+ 494      72617465 
+ 494      645F536F 
+ 494      75726365 
+ 494      5C50536F 
+ 495              	.LASF9:
+ 496 0039 666C6F61 		.ascii	"float\000"
+ 496      7400
+ 497              	.LASF12:
+ 498 003f 75696E74 		.ascii	"uint8\000"
+ 498      3800
+ 499              	.LASF1:
+ 500 0045 756E7369 		.ascii	"unsigned char\000"
+ 500      676E6564 
+ 500      20636861 
+ 500      7200
+ 501              	.LASF20:
+ 502 0053 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 502      43313120 
+ 502      352E342E 
+ 502      31203230 
+ 502      31363036 
+ 503 0086 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 503      20726576 
+ 503      6973696F 
+ 503      6E203233 
+ 503      37373135 
+ 504 00b9 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 504      66756E63 
+ 504      74696F6E 
+ 504      2D736563 
+ 504      74696F6E 
+ 505              	.LASF13:
+ 506 00e1 72656738 		.ascii	"reg8\000"
+ 506      00
+ 507              	.LASF5:
+ 508 00e6 6C6F6E67 		.ascii	"long unsigned int\000"
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 13
+
+
+ 508      20756E73 
+ 508      69676E65 
+ 508      6420696E 
+ 508      7400
+ 509              	.LASF3:
+ 510 00f8 73686F72 		.ascii	"short unsigned int\000"
+ 510      7420756E 
+ 510      7369676E 
+ 510      65642069 
+ 510      6E7400
+ 511              	.LASF19:
+ 512 010b 4C454453 		.ascii	"LEDS_ReadDataReg\000"
+ 512      5F526561 
+ 512      64446174 
+ 512      61526567 
+ 512      00
+ 513              	.LASF10:
+ 514 011c 646F7562 		.ascii	"double\000"
+ 514      6C6500
+ 515              	.LASF8:
+ 516 0123 756E7369 		.ascii	"unsigned int\000"
+ 516      676E6564 
+ 516      20696E74 
+ 516      00
+ 517              	.LASF7:
+ 518 0130 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 518      206C6F6E 
+ 518      6720756E 
+ 518      7369676E 
+ 518      65642069 
+ 519              	.LASF17:
+ 520 0147 6D6F6465 		.ascii	"mode\000"
+ 520      00
+ 521              	.LASF6:
+ 522 014c 6C6F6E67 		.ascii	"long long int\000"
+ 522      206C6F6E 
+ 522      6720696E 
+ 522      7400
+ 523              	.LASF11:
+ 524 015a 63686172 		.ascii	"char\000"
+ 524      00
+ 525              	.LASF2:
+ 526 015f 73686F72 		.ascii	"short int\000"
+ 526      7420696E 
+ 526      7400
+ 527              	.LASF22:
+ 528 0169 433A5C55 		.ascii	"C:\\Users\\nikod\\Documents\\PSoC Creator\\Signals\\"
+ 528      73657273 
+ 528      5C6E696B 
+ 528      6F645C44 
+ 528      6F63756D 
+ 529 0197 45434767 		.ascii	"ECGgenarator.cydsn\000"
+ 529      656E6172 
+ 529      61746F72 
+ 529      2E637964 
+ 529      736E00
+ 530              	.LASF15:
+ARM GAS  C:\Users\nikod\AppData\Local\Temp\ccCOoqoZ.s 			page 14
+
+
+ 531 01aa 4C454453 		.ascii	"LEDS_SetDriveMode\000"
+ 531      5F536574 
+ 531      44726976 
+ 531      654D6F64 
+ 531      6500
+ 532              	.LASF4:
+ 533 01bc 6C6F6E67 		.ascii	"long int\000"
+ 533      20696E74 
+ 533      00
+ 534              	.LASF0:
+ 535 01c5 7369676E 		.ascii	"signed char\000"
+ 535      65642063 
+ 535      68617200 
+ 536              	.LASF14:
+ 537 01d1 4C454453 		.ascii	"LEDS_Write\000"
+ 537      5F577269 
+ 537      746500
+ 538              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

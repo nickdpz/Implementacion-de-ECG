@@ -1,0 +1,23 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2019-05-19T19:53:45Z")
+ (DESIGN "ECGgenarator")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.2")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "ECGgenarator")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ClockBlock.clk_bus_glb ISR.clock (0.000:0.000:0.000))
+    (INTERCONNECT SW.interrupt ISR.interrupt (1.000:1.000:1.000))
+    (INTERCONNECT SW\(0\)_PAD SW\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LEDS\(0\)_PAD LEDS\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LEDS\(1\)_PAD LEDS\(1\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

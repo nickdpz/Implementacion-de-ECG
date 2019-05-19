@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f6b8ddcb-5442-405c-9c8b-e5c88a368d22
+C:\Users\nikod\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|1e4749e8-0890-4690-bdc8-100cf4d2b0a7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|75c1589a-2ad5-4f42-9947-f9cd47f91a2a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|2fdf5355-ccdc-4c4b-957d-73435da87b29
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|de2c1fc3-d6d9-49f0-9da4-3057ef4ff783
+C:\Users\nikod\Documents\PSoC Creator\Signals\ECGgenarator.cydsn\ECGgenarator.cyprj|696104ea-e696-4c7a-8b86-d7fad79025f4
