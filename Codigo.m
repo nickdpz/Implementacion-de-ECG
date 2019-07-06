@@ -3,7 +3,10 @@ close all;
 %load('C:\Users\nikod\Documents\MATLAB\analisis-de-electrocardiogramas-y-deteccion-de-enfermedades\Biblioteca de ECG\ecg_normal_ideal.mat')
 %load('C:\Users\nikod\Documents\MATLAB\analisis-de-electrocardiogramas-y-deteccion-de-enfermedades\Biblioteca de ECG\ecg_normal_1.mat');
 %load('C:\Users\nikod\Documents\MATLAB\analisis-de-electrocardiogramas-y-deteccion-de-enfermedades\Biblioteca de ECG\ecg_rapido.mat');
-load('C:\Users\nikod\Documents\MATLAB\analisis-de-electrocardiogramas-y-deteccion-de-enfermedades\Biblioteca de ECG\ecg_lento.mat')
+%load('C:\Users\nikod\Documents\MATLAB\analisis-de-electrocardiogramas-y-deteccion-de-enfermedades\Biblioteca de ECG\ecg_lento.mat')
+%load('C:\Users\nikod\Documents\MATLAB\analisis-de-electrocardiogramas-y-deteccion-de-enfermedades\Biblioteca de ECG\ecg_infarto_1.mat')
+load('C:\Users\nikod\Documents\MATLAB\analisis-de-electrocardiogramas-y-deteccion-de-enfermedades\Biblioteca de ECG\ecg_hipocalcemia_1.mat')
+
 x=ecg;
 k=(x-min(x))/(max(x)-min(x));
 Fs = 100;            % Sampling frequency                    
